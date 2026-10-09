@@ -130,5 +130,4 @@ app.post("/api/midtrans/notification", async (req, res) => {
   } catch (e) { console.error(e); res.status(500).end(); }
 });
 
-app.get("*", (_req, res) => res.sendFile(path.join(__dirname, "public", "index.html")));
-app.listen(Number(PORT), () => console.log(`PixelAds running on :${PORT}`));
+app.use((_req, res) => res.sendFile(path.join(__dirname, "public", "index.html")));
